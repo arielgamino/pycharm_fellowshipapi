@@ -197,27 +197,105 @@ def extract_documents_from_corpora_pickles_parallel(pickle_directory, number_of_
 def extract_wordsletters_from_corpora_pickles(pickle_directory, number_of_words, number_of_letters):
     most_common_words = {}
     most_common_letters = {}
-
     # Read data from pickle files
     for filename in os.listdir(pickle_directory):
         language = (filename.split('_')[-1]).split('.')[0]
         if ('word_counter' in filename):
             all_words_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+
             ##eliminate any words that intersect with another language
             for lang in most_common_words:
-                all_words_for_language, most_common_words[lang] = remove_common_elements(all_words_for_language,
-                                                                                         most_common_words[lang])
+                all_words_for_language, most_common_words[lang] = remove_common_elements(all_words_for_language,most_common_words[lang])
 
             most_common_words[language] = all_words_for_language
 
         elif ('alphabet' in filename):
             all_letters_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+
             ##eliminate any words that intersect with another language
             for lang in most_common_letters:
-                all_letters_for_language, most_common_letters[lang] = remove_common_elements(all_letters_for_language,
-                                                                                             most_common_letters[lang])
+                all_letters_for_language, most_common_letters[lang] = remove_common_elements(all_letters_for_language,most_common_letters[lang])
 
             most_common_letters[language] = all_letters_for_language
+
+
+    # return only up to the amount required
+    for lang in most_common_words:
+        word_limit = number_of_words if (number_of_words >= 0) else len(most_common_words[lang])
+        most_common_words[lang] = most_common_words[lang].most_common(word_limit)
+
+    for lang in most_common_letters:
+        letter_limit = number_of_letters if (number_of_letters >= 0) else len(most_common_letters[lang])
+        most_common_letters[lang] = most_common_letters[lang].most_common(letter_limit)
+
+    return most_common_words, most_common_letters
+
+def extract_documents_from_corpora_pickles_parallel(pickle_directory, number_of_documents):
+    all_documents = []
+    dataset = []
+    # Read data from pickle files
+    for filename in os.listdir(pickle_directory):
+        if ('documents' in filename):
+            dataset.append((pickle_directory+"/"+filename,number_of_documents))
+
+    # Run this with a pool of 5 agents having a chunksize of 3 until finished
+    with Pool() as pool:
+        all_documents = pool.map(load_document_pickle, dataset)
+
+    return all_documents
+
+def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory, number_of_words, number_of_letters):
+    most_common_words = {}
+    most_common_letters = {}
+    # Read data from pickle files
+    for filename in os.listdir(pickle_directory):
+        language = (filename.split('_')[-1]).split('.')[0]
+        if ('word_counter' in filename):
+            all_words_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+            fileout = open('stats/'+language+"_words.csv","w")
+            fileout.write('word,count\n')
+            for k,v in all_words_for_language.items():
+                fileout.write(k+','+str(v)+'\n')
+            print(language+" all_words_for_language:"+str(len(all_words_for_language)))
+            fileout.close()
+
+            ##eliminate any words that intersect with another language
+            for lang in most_common_words:
+                all_words_for_language, most_common_words[lang] = remove_common_elements(all_words_for_language,most_common_words[lang])
+
+            fileout2 = open('stats/'+language+"_words_cleaned.csv","w")
+            fileout2.write('word,count\n')
+            for k,v in all_words_for_language.items():
+                fileout2.write(k+','+str(v)+'\n')
+            print(language+" all_words_for_language_cleaned:" + str(len(all_words_for_language)))
+            fileout2.close()
+
+            most_common_words[language] = all_words_for_language
+
+        elif ('alphabet' in filename):
+            all_letters_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+
+            fileout = open('stats/'+language+"_letters.csv","w")
+            fileout.write('letter,count\n')
+
+            for k,v in all_letters_for_language.items():
+                fileout.write(k+','+str(v)+'\n')
+            print(language+" all_letters_for_language:" + str(len(all_letters_for_language)))
+            fileout.close()
+
+            ##eliminate any words that intersect with another language
+            for lang in most_common_letters:
+                all_letters_for_language, most_common_letters[lang] = remove_common_elements(all_letters_for_language,most_common_letters[lang])
+
+            fileout2 = open('stats/'+language+"_letters_cleaned.csv","w")
+            fileout2.write('letter,count\n')
+            for k,v in all_letters_for_language.items():
+                fileout2.write(k+','+str(v)+'\n')
+            print(language+" all_letters_for_language:" + str(len(all_letters_for_language)))
+            fileout2.close()
+
+            most_common_letters[language] = all_letters_for_language
+
 
     # return only up to the amount required
     for lang in most_common_words:

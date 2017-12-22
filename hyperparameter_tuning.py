@@ -12,7 +12,7 @@ europarl_testfile = "europarl.test"
 
 #for number_of_documents in [500, 1000, 3000, 5000]:
 #for number_of_documents in [5000]:
-for number_of_documents in [50]:
+for number_of_documents in [1000]:
     # -------------Step 1-------------
     # ----READ FROM PICKLE FILES (Pre-read)----
     # Get data to create features from corpora

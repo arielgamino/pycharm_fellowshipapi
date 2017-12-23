@@ -252,58 +252,34 @@ def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory,
         language = (filename.split('_')[-1]).split('.')[0]
         if ('word_counter' in filename):
             all_words_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
-            fileout = open('stats/'+language+"_words.csv","w")
-            fileout.write('word,count\n')
-            for k,v in all_words_for_language.items():
-                fileout.write(k+','+str(v)+'\n')
-            print(language+" all_words_for_language:"+str(len(all_words_for_language)))
-            fileout.close()
-
-            ##eliminate any words that intersect with another language
-            for lang in most_common_words:
-                all_words_for_language, most_common_words[lang] = remove_common_elements(all_words_for_language,most_common_words[lang])
-
-            fileout2 = open('stats/'+language+"_words_cleaned.csv","w")
-            fileout2.write('word,count\n')
-            for k,v in all_words_for_language.items():
-                fileout2.write(k+','+str(v)+'\n')
-            print(language+" all_words_for_language_cleaned:" + str(len(all_words_for_language)))
-            fileout2.close()
-
             most_common_words[language] = all_words_for_language
 
         elif ('alphabet' in filename):
             all_letters_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
-
-            fileout = open('stats/'+language+"_letters.csv","w")
-            fileout.write('letter,count\n')
-
-            for k,v in all_letters_for_language.items():
-                fileout.write(k+','+str(v)+'\n')
-            print(language+" all_letters_for_language:" + str(len(all_letters_for_language)))
-            fileout.close()
-
-            ##eliminate any words that intersect with another language
-            for lang in most_common_letters:
-                all_letters_for_language, most_common_letters[lang] = remove_common_elements(all_letters_for_language,most_common_letters[lang])
-
-            fileout2 = open('stats/'+language+"_letters_cleaned.csv","w")
-            fileout2.write('letter,count\n')
-            for k,v in all_letters_for_language.items():
-                fileout2.write(k+','+str(v)+'\n')
-            print(language+" all_letters_for_language:" + str(len(all_letters_for_language)))
-            fileout2.close()
-
             most_common_letters[language] = all_letters_for_language
 
+    #Remove words/letters that are found on multiple languages
 
-    # return only up to the amount required
-    for lang in most_common_words:
-        word_limit = number_of_words if (number_of_words >= 0) else len(most_common_words[lang])
-        most_common_words[lang] = most_common_words[lang].most_common(word_limit)
+    ##eliminate any words that intersect with another language
+    most_common_keys = most_common_words.keys()
+    for lang in most_common_keys:
+        rest_of_languages = list(most_common_keys)
+        rest_of_languages.remove(lang)
+        for lang2 in rest_of_languages:
+            print(lang+" len before:"+str(len(most_common_words[lang])))
+            print(lang2 + " len before:" + strmost_common_words[lang2])
+            most_common_words[lang], most_common_letters[lang2] = remove_common_elements(most_common_words[lang2],
+                                                                                         most_common_words[lang])
+            print(lang + " len after:" + most_common_words[lang2])
+            print(lang2 + " len before:" + most_common_words[lang2])
 
-    for lang in most_common_letters:
-        letter_limit = number_of_letters if (number_of_letters >= 0) else len(most_common_letters[lang])
-        most_common_letters[lang] = most_common_letters[lang].most_common(letter_limit)
+    # # return only up to the amount required
+    # for lang in most_common_words:
+    #     word_limit = number_of_words if (number_of_words >= 0) else len(most_common_words[lang])
+    #     most_common_words[lang] = most_common_words[lang].most_common(word_limit)
+    #
+    # for lang in most_common_letters:
+    #     letter_limit = number_of_letters if (number_of_letters >= 0) else len(most_common_letters[lang])
+    #     most_common_letters[lang] = most_common_letters[lang].most_common(letter_limit)
 
     return most_common_words, most_common_letters

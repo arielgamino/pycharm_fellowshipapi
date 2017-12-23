@@ -12,7 +12,7 @@ europarl_testfile = "europarl.test"
 
 #for number_of_documents in [500, 1000, 3000, 5000]:
 #for number_of_documents in [5000]:
-for number_of_documents in [1000]:
+for number_of_documents in [5000]:
     # -------------Step 1-------------
     # ----READ FROM PICKLE FILES (Pre-read)----
     # Get data to create features from corpora
@@ -28,7 +28,7 @@ for number_of_documents in [1000]:
 
     stats = collections.OrderedDict()
 #    for words_letters in [(2000,0),(2000,100),(3000,40)]:
-    for words_letters in [(20, 10), (200,60)]:
+    for words_letters in [(100, 10), (400,100)]:
         number_of_words   = words_letters[0]
         number_of_letters = words_letters[1]
         print("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")

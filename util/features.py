@@ -117,6 +117,16 @@ def document_features(document, word_features, letter_features):
         features[l] = (l in document_alphabet)
     return features
 
+def document_features_fromwords(document, word_features):
+    #normalize words
+    document = [w.lower() for w in document]
+    document_words = set(document)
+    features = {}
+    # Add word that are part of common words
+    for word in word_features:
+        features[word] = (word in document_words)
+    # Add letters that are part of common letters
+    return features
 
 def extract_data_from_corpora_pickles(pickle_directory, number_of_documents, number_of_words, number_of_letters):
     all_documents = []
@@ -244,6 +254,39 @@ def extract_documents_from_corpora_pickles_parallel(pickle_directory, number_of_
 
     return all_documents
 
+#Get a counter object and lower all words
+def convert_to_lower(counter_list):
+    # Save to file for review - words
+    counter = Counter()
+    for k, v in counter_list.most_common():
+        counter.update({k.lower():v})
+    return counter
+
+#Get Counter object and return only those that add up to
+#percentage of total.  For instance
+#select_elements_up_to_percentage(Counter({'a':10,'b':10,'c':5,'d':5}), 30)
+#returns Counter{'a':10})
+def select_elements_up_to_percentage(counter_obj, upto_percentage):
+    #get sum to calculate percentages
+    counter = Counter()
+    # results = []
+    totalsum = 0
+    for k, v in counter_obj.items():
+        totalsum += v
+
+    percentage_sum = 0
+    #Calculate percentage of each instance
+    for k, v in counter_obj.most_common():
+        percentage = (v/totalsum)*100
+        percentage_sum += percentage
+        # results.append((k,v,percentage, percentage_sum))
+        if(percentage_sum>upto_percentage):
+            break
+        counter[k]=v
+
+    return counter
+
+
 def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory, number_of_words, number_of_letters):
     most_common_words = {}
     most_common_letters = {}
@@ -252,26 +295,56 @@ def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory,
         language = (filename.split('_')[-1]).split('.')[0]
         if ('word_counter' in filename):
             all_words_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+            all_words_for_language = convert_to_lower(all_words_for_language)
             most_common_words[language] = all_words_for_language
 
         elif ('alphabet' in filename):
             all_letters_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+            all_letters_for_language = convert_to_lower(all_letters_for_language)
             most_common_letters[language] = all_letters_for_language
 
     #Remove words/letters that are found on multiple languages
-
     ##eliminate any words that intersect with another language
     most_common_keys = most_common_words.keys()
     for lang in most_common_keys:
         rest_of_languages = list(most_common_keys)
         rest_of_languages.remove(lang)
+        len_before = len(most_common_words[lang])
         for lang2 in rest_of_languages:
-            print(lang+" len before:"+str(len(most_common_words[lang])))
-            print(lang2 + " len before:" + strmost_common_words[lang2])
-            most_common_words[lang], most_common_letters[lang2] = remove_common_elements(most_common_words[lang2],
-                                                                                         most_common_words[lang])
-            print(lang + " len after:" + most_common_words[lang2])
-            print(lang2 + " len before:" + most_common_words[lang2])
+            most_common_words[lang], most_common_words[lang2] = remove_common_elements(most_common_words[lang],most_common_words[lang2])
+        len_after = len(most_common_words[lang])
+        diff = len_before - len_after
+        print(lang +" before:"+str(len_before)+" after:" + str(len_after)+" lost:"+str(diff))
+
+    #Save to file for review - words
+    for lang, word_counter in most_common_words.items():
+        file_out = open('stats/' + lang + "_words.csv", "w")
+        file_out.write('word,count\n')
+        for k,v in word_counter.most_common():
+            file_out.write(k+","+str(v)+"\n")
+        file_out.close()
+
+    ##eliminate any words that intersect with another language
+    most_common_letter_keys = most_common_letters.keys()
+    for lang in most_common_letter_keys:
+        rest_of_languages = list(most_common_letter_keys)
+        rest_of_languages.remove(lang)
+        len_before = len(most_common_letters[lang])
+        for lang2 in rest_of_languages:
+            most_common_letters[lang], most_common_letters[lang2] = remove_common_elements(most_common_letters[lang],
+                                                                                           most_common_letters[lang2])
+        len_after = len(most_common_letters[lang])
+        diff = len_before - len_after
+        print(lang + " letters before:" + str(len_before) + " after:" + str(len_after) + " lost:" + str(diff))
+
+    #Save to file for review - words
+    for lang, letter_counter in most_common_letters.items():
+        file_out = open('stats/' + lang + "_letters.csv", "w")
+        file_out.write('word,count\n')
+        for k,v in letter_counter.most_common():
+            file_out.write(k+","+str(v)+"\n")
+        file_out.close()
+
 
     # # return only up to the amount required
     # for lang in most_common_words:
@@ -283,3 +356,40 @@ def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory,
     #     most_common_letters[lang] = most_common_letters[lang].most_common(letter_limit)
 
     return most_common_words, most_common_letters
+
+def extract_words_from_corpora_pickles_upto_per(pickle_directory, upto_percentage):
+    most_common_words = {}
+    # Read data from pickle files
+    for filename in os.listdir(pickle_directory):
+        language = (filename.split('_')[-1]).split('.')[0]
+        if ('word_counter' in filename):
+            all_words_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+            all_words_for_language = convert_to_lower(all_words_for_language)
+            most_common_words[language] = all_words_for_language
+
+    #Remove words that are found on multiple languages
+    ##eliminate any words that intersect with another language
+    most_common_keys = most_common_words.keys()
+    for lang in most_common_keys:
+        rest_of_languages = list(most_common_keys)
+        rest_of_languages.remove(lang)
+        len_before = len(most_common_words[lang])
+        for lang2 in rest_of_languages:
+            most_common_words[lang], most_common_words[lang2] = remove_common_elements(most_common_words[lang],most_common_words[lang2])
+        len_after = len(most_common_words[lang])
+        diff = len_before - len_after
+        # print(lang +" before:"+str(len_before)+" after:" + str(len_after)+" lost:"+str(diff))
+
+    #Save to file for review - words
+    # for lang, word_counter in most_common_words.items():
+    #     file_out = open('stats/' + lang + "_words.csv", "w")
+    #     file_out.write('word,count\n')
+    #     for k,v in word_counter.most_common():
+    #         file_out.write(k+","+str(v)+"\n")
+    #     file_out.close()
+
+    # return only up to the percentage required
+    for lang in most_common_words:
+        most_common_words[lang] = select_elements_up_to_percentage(most_common_words[lang], upto_percentage)
+
+    return most_common_words

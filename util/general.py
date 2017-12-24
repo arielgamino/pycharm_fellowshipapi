@@ -34,14 +34,25 @@ def most_common_words_letter(most_common_words, most_common_letters):
 
     for k, v in most_common_words.items():
         for word in v:
-            word_features.add(word[0])
+            word_features.add(word)
 
     # Create letter_features, a list of most common letters on all languages
     for k, v in most_common_letters.items():
         for letter in v:
-            letter_features.add(letter[0])
+            letter_features.add(letter)
 
     return word_features, letter_features
+
+def most_common_wordsonly(most_common_words):
+    # Create word_features, a list of most common words on all languauges
+    # this will be used on feature set fed to classifier
+    word_features = set()
+
+    for k, v in most_common_words.items():
+        for word in v:
+            word_features.add(word)
+
+    return word_features
 
 
 # Takes two Counter objects, removes common elements

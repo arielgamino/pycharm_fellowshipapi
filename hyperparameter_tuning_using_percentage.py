@@ -11,7 +11,7 @@ stats_out = []
 europarl_testfile = "europarl.test"
 
 #for number_of_documents in [500, 1000, 3000, 5000]:
-for number_of_documents in [9000]:
+for number_of_documents in [1000,5000,9000]:
     # -------------Step 1-------------
     # ----READ FROM PICKLE FILES (Pre-read)----
     # Get data to create features from corpora
@@ -26,8 +26,9 @@ for number_of_documents in [9000]:
     print("Total Documents:" + str(len(all_documents)))
 
     stats = collections.OrderedDict()
-#    for words_letters in [(2000,0),(2000,100),(3000,40)]:
-    for upto_percentage in [20]:
+    for hyperparameters in [(20,5),(20,10),(40,5),(40,10),(70,5)]:
+        upto_percentage = hyperparameters[0]
+        number_of_common_letters = hyperparameters[1]
         print("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
         print("Percentage of common words to use:" + str(upto_percentage))
         # Part 2 - get common words, letters
@@ -50,7 +51,7 @@ for number_of_documents in [9000]:
         print("words_features:" + str(len(word_features)))
 
         # create featureset
-        featuresets = [(document_features_fromwords(d, word_features), c) for (d, c) in all_documents]
+        featuresets = [(document_features_fromwords(d, word_features, number_of_common_letters), c) for (d, c) in all_documents]
         elapsed_feature_creation = print_elapsed_time(start)
         print("Elapsed time featureset creation:" + elapsed_feature_creation)
         print("featuresets:" + str(len(featuresets)))
@@ -78,10 +79,10 @@ for number_of_documents in [9000]:
         # -------------Step 5-------------
         # Test against europarl_test file
 
-        results_outfile = "europarl_test_classified_attempt_" + str(number_of_documents) + "_" + str(upto_percentage) + ".csv"
+        results_outfile = "europarl_test_classified_attempt_" + str(number_of_documents) + "_" + str(upto_percentage) + "_" + str(number_of_common_letters)+".csv"
         everyother = 20
         start = time.time()
-        total_ctr, positive_ctr, negative_ctr, language_counter = test_europarltest_file_words(europarl_testfile, results_outfile, everyother,classifier, word_features)
+        total_ctr, positive_ctr, negative_ctr, language_counter = test_europarltest_file_words(europarl_testfile, results_outfile, everyother,classifier, word_features, number_of_common_letters)
         # results
         for k,v in language_counter.items():
             print("       "+k+":"+str(v))
@@ -94,13 +95,13 @@ for number_of_documents in [9000]:
         print("Elapsed time for accuracy testing:" + elapsed_accuracy)  # Save classifier for deployment
 
         # Save to pickle so it can be tested later with europarl.test file
-        pickle_out = open("models/classifier_" + str(number_of_documents) + "_" + str(upto_percentage) + ".pickle", "wb")
+        pickle_out = open("models/classifier_" + str(number_of_documents) + "_" + str(upto_percentage) + "_" + str(number_of_common_letters)+ ".pickle", "wb")
         pickle.dump(classifier, pickle_out)
         pickle_out.close()
-        pickle_out = open("models/word_features" + str(number_of_documents) + "_" + str(upto_percentage) + ".pickle", "wb")
+        pickle_out = open("models/word_features" + str(number_of_documents) + "_" + str(upto_percentage) + "_" + str(number_of_common_letters)+ ".pickle", "wb")
         pickle.dump(word_features, pickle_out)
         pickle_out.close()
-        pickle_out = open("models/letter_features" + str(number_of_documents) + "_" + str(upto_percentage) + ".pickle", "wb")
+        pickle_out = open("models/letter_features" + str(number_of_documents) + "_" + str(upto_percentage) + "_" + str(number_of_common_letters)+ ".pickle", "wb")
         pickle.dump(word_features, pickle_out)
         pickle_out.close()
 

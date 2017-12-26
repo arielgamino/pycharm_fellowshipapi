@@ -10,11 +10,20 @@ pickles_directory="pickles"
 #     print(lang+":"+str(len(most_common_words[lang])))
 
 #extract_most_common_letters(pickles_directory,100)
-tokenized_text = ['xwwwyyyzz','Ariel','Gamiño','This', 'and', 'that','What', 'is', 'the','deal','Merry']
+tokenized_text = ['xwwwyyyzz','Ariel','Gamiño','This', 'his','bliss','and', 'that','What', 'is', 'the','deal','Merry','arry','hat','l']
 a = get_most_frequent_letters(tokenized_text, 10)
 print(a)
 
+most_common_ending = get_most_frequent_ending_of_words(tokenized_text,3)
+print(most_common_ending)
 
+features = {}
+counter = 0
+for n in most_common_ending:
+    counter +=1
+    features['common_ending_top_' + str(counter)] = n[0]
+
+print(features)
 
 # all_words_for_language = pickle.load(open("pickles/word_counter_et.pickle", "rb"))
 # all_words_for_language = convert_to_lower(all_words_for_language)

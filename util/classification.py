@@ -6,8 +6,8 @@ import time
 def classify_document(document, classifier, word_features, letter_features):
     return classifier.classify(document_features(tokenize_removepuncuation(document), word_features, letter_features))
 
-def classify_document_words(document, classifier, word_features):
-    return classifier.classify(document_features_fromwords(tokenize_removepuncuation(document), word_features))
+def classify_document_words(document, classifier, word_features, number_of_common_letters):
+    return classifier.classify(document_features_fromwords(tokenize_removepuncuation(document), word_features, number_of_common_letters))
 
 
 def test_europarltest_file(eurofile, resultsfile, everyother, classifier, word_features, letter_features):
@@ -58,7 +58,7 @@ def test_europarltest_file(eurofile, resultsfile, everyother, classifier, word_f
     file_correctly.close()
     file_incorrectly.close()
 
-def test_europarltest_file_words(eurofile, resultsfile, everyother, classifier, word_features):
+def test_europarltest_file_words(eurofile, resultsfile, everyother, classifier, word_features, number_of_common_letters):
     # Read test file and classify each sentence in file
     positive_ctr = 0
     negative_ctr = 0
@@ -85,7 +85,7 @@ def test_europarltest_file_words(eurofile, resultsfile, everyother, classifier, 
                 # sentence is rest, clean up spaces
                 sentence = line[2:].strip()
                 # Detect language based on model
-                language_detected = classify_document_words(sentence, classifier, word_features)
+                language_detected = classify_document_words(sentence, classifier, word_features, number_of_common_letters)
                 correctly_classified = language_detected == language
                 # tally correct and incorrect
                 if (correctly_classified):

@@ -51,6 +51,19 @@ def get_most_frequent_letters(tokenized_text, number_of_letters):
     most_common_str = most_common_str[:number_of_letters]
     return most_common_str
 
+def get_most_frequent_ending_of_words(tokenized_text,number_of_characters):
+    ending_counter = Counter()
+
+    for n in tokenized_text:
+        ending_counter[n[-number_of_characters:]] += 1
+
+    most_common = ending_counter.most_common(10)
+    most_common_list = []
+    for l in most_common:
+        most_common_list.append(l)
+
+    return most_common_list
+
 def extract_data_from_corpora(corpora_directory, number_of_words, number_of_letter, save_pickles):
     all_documents = []
     most_common_words = {}
@@ -127,22 +140,24 @@ def document_features(document, word_features, letter_features):
         features[l] = (l in document_alphabet)
     return features
 
-def document_features_fromwords(document, word_features):
+def document_features_fromwords(document, word_features, number_of_common_letters):
     #normalize words
     document = [w.lower() for w in document]
     document_words = set(document)
     features = {}
     #Set most common letters as a feature
-    most_common_letters = get_most_frequent_letters(document_words, 5)
-    features['common_letters_2'] = most_common_letters[:2]
-    features['common_letters_3'] = most_common_letters[:3]
-    features['common_letters_4'] = most_common_letters[:4]
-    features['common_letters_5'] = most_common_letters[:5]
-
+    most_common_letters = get_most_frequent_letters(document_words, number_of_common_letters)
+    for n in range(2,number_of_common_letters+1):
+        features['common_letters_'+str(n)] = most_common_letters[:n]
+    #Set last three letters of words  also as a feature
+    most_common_ending = get_most_frequent_ending_of_words(document_words, 3)
+    counter = 0
+    for n in most_common_ending:
+        counter += 1
+        features['common_ending_top_' + str(counter)] = n[0]
     # Add word that are part of common words
     for word in word_features:
         features[word] = (word in document_words)
-    # Add letters that are part of common letters
     return features
 
 def extract_data_from_corpora_pickles(pickle_directory, number_of_documents, number_of_words, number_of_letters):

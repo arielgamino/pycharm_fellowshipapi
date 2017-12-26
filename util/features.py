@@ -40,6 +40,16 @@ def get_text_from_directory(directory):
     # alphabet_counter - set of all letter found in document
     return documents, word_counter, alphabet_counter
 
+def get_most_frequent_letters(tokenized_text, number_of_letters):
+    # get letters and add to alphabet
+    alphabet_counter = Counter()
+    [alphabet_counter.update(list(n)) for n in tokenized_text]
+    most_common = alphabet_counter.most_common(number_of_letters)
+    most_common_str = ""
+    for l in most_common:
+        most_common_str += l[0]
+    most_common_str = most_common_str[:number_of_letters]
+    return most_common_str
 
 def extract_data_from_corpora(corpora_directory, number_of_words, number_of_letter, save_pickles):
     all_documents = []
@@ -122,6 +132,13 @@ def document_features_fromwords(document, word_features):
     document = [w.lower() for w in document]
     document_words = set(document)
     features = {}
+    #Set most common letters as a feature
+    most_common_letters = get_most_frequent_letters(document_words, 5)
+    features['common_letters_2'] = most_common_letters[:2]
+    features['common_letters_3'] = most_common_letters[:3]
+    features['common_letters_4'] = most_common_letters[:4]
+    features['common_letters_5'] = most_common_letters[:5]
+
     # Add word that are part of common words
     for word in word_features:
         features[word] = (word in document_words)
@@ -285,6 +302,27 @@ def select_elements_up_to_percentage(counter_obj, upto_percentage):
         counter[k]=v
 
     return counter
+
+def extract_most_common_letters(pickle_directory,number_of_letters):
+    most_common_letters = {}
+
+    for filename in os.listdir(pickle_directory):
+        language = (filename.split('_')[-1]).split('.')[0]
+
+        if ('alphabet' in filename):
+            all_letters_for_language = pickle.load(open(pickle_directory + "/" + filename, "rb"))
+            all_letters_for_language = convert_to_lower(all_letters_for_language)
+            most_common_letters[language] = all_letters_for_language
+
+    # Save to file for review - words
+    for lang, letter_counter in most_common_letters.items():
+        file_out = open('stats/' + lang + "_freq_letters.csv", "w")
+        file_out.write('word,count\n')
+        for k, v in letter_counter.most_common():
+            file_out.write(k + "," + str(v) + "\n")
+        file_out.close()
+
+    return most_common_letters
 
 
 def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory, number_of_words, number_of_letters):

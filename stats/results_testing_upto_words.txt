@@ -1,0 +1,257 @@
+/Users/agamino/anaconda/envs/py3/bin/python /Users/agamino/PycharmProjects/pycharm_fellowshipapi/hyperparameter_tuning_using_percentage.py
+-------------------------------------------------
+Number of documents to extract: 5000
+Elapsed time reading all documents:0:04:49
+Total Documents:105000
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:20
+Elapsed time reading all words, letters:0:02:17
+all_documents:105000
+most_common_words:21
+bg words:11
+cs words:68
+da words:61
+de words:155
+el words:13
+en words:85
+es words:54
+et words:129
+fi words:74
+fr words:104
+hu words:69
+it words:75
+lt words:92
+lv words:79
+nl words:65
+pl words:99
+pt words:50
+ro words:31
+sk words:68
+sl words:102
+sv words:7
+words_features:1491
+Elapsed time featureset creation:0:03:56
+featuresets:105000
+Train set:84000
+Test set:21000
+Elapsed time for training:0:05:36
+Classifier Accuracy:0.4316190476190476
+Elapsed time for accuracy testing:0:20:57
+       bg_correct:50
+       cs_incorrect:23
+       cs_correct:27
+       da_incorrect:44
+       da_correct:6
+       de_incorrect:50
+       el_correct:42
+       el_incorrect:8
+       en_incorrect:48
+       en_correct:2
+       es_incorrect:37
+       es_correct:13
+       et_incorrect:38
+       et_correct:12
+       fi_correct:18
+       fi_incorrect:32
+       fr_incorrect:49
+       fr_correct:1
+       hu_correct:34
+       hu_incorrect:16
+       it_incorrect:39
+       it_correct:11
+       lt_correct:30
+       lt_incorrect:20
+       lv_correct:30
+       lv_incorrect:20
+       nl_incorrect:36
+       nl_correct:14
+       pl_correct:19
+       pl_incorrect:31
+       pt_incorrect:33
+       pt_correct:17
+       ro_incorrect:8
+       ro_correct:42
+       sk_incorrect:21
+       sk_correct:29
+       sl_correct:25
+       sl_incorrect:25
+       sv_correct:47
+       sv_incorrect:3
+       Total attempted: 1050
+  Classified correctly: 469
+Classified incorrectly: 581
+  Europartest Accuracy: 44.666666666666664
+Elapsed time for accuracy testing:0:00:57
+Completed:0:38:35
+
+-------------------------------------------------
+Number of documents to extract: 9000
+Elapsed time reading all documents:0:09:46
+Total Documents:182558
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:20
+Elapsed time reading all words, letters:0:01:01
+all_documents:182558
+most_common_words:21
+bg words:11
+cs words:68
+da words:61
+de words:155
+el words:13
+en words:85
+es words:54
+et words:129
+fi words:74
+fr words:104
+hu words:69
+it words:75
+lt words:92
+lv words:79
+nl words:65
+pl words:99
+pt words:50
+ro words:31
+sk words:68
+sl words:102
+sv words:7
+words_features:1491
+Elapsed time featureset creation:0:07:49
+featuresets:182558
+Train set:146046
+Test set:36512
+Elapsed time for training:0:13:36
+Classifier Accuracy:0.4262434268185802
+Elapsed time for accuracy testing:0:35:51
+       bg_correct:50
+       cs_incorrect:23
+       cs_correct:27
+       da_incorrect:32
+       da_correct:18
+       de_incorrect:46
+       de_correct:4
+       el_correct:42
+       el_incorrect:8
+       en_incorrect:48
+       en_correct:2
+       es_incorrect:36
+       es_correct:14
+       et_incorrect:38
+       et_correct:12
+       fi_correct:24
+       fi_incorrect:26
+       fr_incorrect:45
+       fr_correct:5
+       hu_correct:34
+       hu_incorrect:16
+       it_incorrect:39
+       it_correct:11
+       lt_correct:28
+       lt_incorrect:22
+       lv_correct:30
+       lv_incorrect:20
+       nl_incorrect:31
+       nl_correct:19
+       pl_correct:19
+       pl_incorrect:31
+       pt_incorrect:25
+       pt_correct:25
+       ro_incorrect:8
+       ro_correct:42
+       sk_incorrect:21
+       sk_correct:29
+       sl_correct:24
+       sl_incorrect:26
+       sv_correct:47
+       sv_incorrect:3
+       Total attempted: 1050
+  Classified correctly: 506
+Classified incorrectly: 544
+  Europartest Accuracy: 48.19047619047619
+Elapsed time for accuracy testing:0:00:56
+Completed:1:09:01
+
+-------------------------------------------------
+Number of documents to extract: 9000
+Elapsed time reading all documents:0:07:39
+Total Documents:182558
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:20
+Elapsed time reading all words, letters:0:07:18
+all_documents:182558
+most_common_words:21
+bg words:11
+cs words:68
+da words:61
+de words:155
+el words:13
+en words:85
+es words:54
+et words:129
+fi words:74
+fr words:104
+hu words:69
+it words:75
+lt words:92
+lv words:79
+nl words:65
+pl words:99
+pt words:50
+ro words:31
+sk words:68
+sl words:102
+sv words:7
+Backend MacOSX is interactive backend. Turning interactive mode on.
+words_features:1491
+Elapsed time featureset creation:0:46:49
+featuresets:182558
+Train set:146046
+Test set:36512
+Elapsed time for training:0:25:04
+Classifier Accuracy:0.6420628834355828
+Elapsed time for accuracy testing:3:11:32
+       bg_correct:50
+       cs_incorrect:15
+       cs_correct:35
+       da_incorrect:35
+       da_correct:15
+       de_incorrect:40
+       de_correct:10
+       el_correct:50
+       en_incorrect:40
+       en_correct:10
+       es_incorrect:27
+       es_correct:23
+       et_incorrect:30
+       et_correct:20
+       fi_correct:28
+       fi_incorrect:22
+       fr_incorrect:42
+       fr_correct:8
+       hu_correct:42
+       hu_incorrect:8
+       it_incorrect:32
+       it_correct:18
+       lt_correct:39
+       lt_incorrect:11
+       lv_correct:37
+       lv_incorrect:13
+       nl_incorrect:20
+       nl_correct:30
+       pl_correct:26
+       pl_incorrect:24
+       pt_incorrect:17
+       pt_correct:33
+       ro_correct:48
+       ro_incorrect:2
+       sk_correct:34
+       sk_incorrect:16
+       sl_correct:31
+       sl_incorrect:19
+       sv_correct:49
+       sv_incorrect:1
+       Total attempted: 1050
+  Classified correctly: 636
+Classified incorrectly: 414
+  Europartest Accuracy: 60.57142857142858
+Elapsed time for accuracy testing:0:05:23
+Completed:4:48:45

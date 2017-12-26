@@ -1,0 +1,53 @@
+-------------------------------
+           Processing:classifier_1000_20_10.pickle
+        Number of documents: 1000
+ Percentage of common words: 20
+   Number of common letters: 10.pickle
+            Total attempted: 4200
+       Classified correctly: 2138
+     Classified incorrectly: 2062
+      Europar test Accuracy: is 50.904761904761905
+Elapsed time for accuracy testing:0:05:16
+-------------------------------
+           Processing:classifier_1000_20_5.pickle
+        Number of documents: 1000
+ Percentage of common words: 20
+   Number of common letters: 5.pickle
+            Total attempted: 4200
+       Classified correctly: 2127
+     Classified incorrectly: 2073
+      Europar test Accuracy: is 50.642857142857146
+Elapsed time for accuracy testing:0:05:12
+
+-------------------------------
+           Processing:classifier_1000_40_10.pickle
+        Number of documents: 1000
+ Percentage of common words: 40
+   Number of common letters: 10.pickle
+            Total attempted: 4200
+       Classified correctly: 1969
+     Classified incorrectly: 2231
+      Europar test Accuracy: is 46.88095238095238
+Elapsed time for accuracy testing:0:27:04
+
+-------------------------------
+           Processing:classifier_1000_40_10.pickle
+        Number of documents: 1000
+ Percentage of common words: 40
+   Number of common letters: 10.pickle
+            Total attempted: 4200
+       Classified correctly: 1969
+     Classified incorrectly: 2231
+      Europar test Accuracy: is 46.88095238095238
+Elapsed time for accuracy testing:0:27:04
+-------------------------------
+           Processing:classifier_1000_40_5.pickle
+        Number of documents: 1000
+ Percentage of common words: 40
+   Number of common letters: 5.pickle
+            Total attempted: 4200
+       Classified correctly: 1964
+     Classified incorrectly: 2236
+      Europar test Accuracy: is 46.76190476190476
+Elapsed time for accuracy testing:0:26:14
+

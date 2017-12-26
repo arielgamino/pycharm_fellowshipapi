@@ -1,0 +1,21 @@
+INC0301042 
+
+for number_of_documents in [5000,10000]:
+for hyperparameters in 
+-------------------------------------------------------
+Documents: 5000
+Percentage of most common words per language: 5%
+common letters up to: 5
+       Total attempted: 2100
+  Classified correctly: 1988
+Classified incorrectly: 112
+featuresets:110000
+Train set:88000
+Test set:22000
+Elapsed time for training:0:00:20
+Classifier Accuracy:0.967
+  Europartest Accuracy: 94.66666666666667
+Elapsed time for accuracy testing:0:00:13
+
+
+[(5,5),(10,10),(20,5),(25,5)]:

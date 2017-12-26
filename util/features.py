@@ -1,4 +1,5 @@
 # Feature extraction and creation functions
+# -*- coding: utf-8 -*-
 from collections import Counter
 import os
 import string

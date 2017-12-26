@@ -10,7 +10,7 @@ pickles_directory="pickles"
 #     print(lang+":"+str(len(most_common_words[lang])))
 
 #extract_most_common_letters(pickles_directory,100)
-tokenized_text = ['xwwwyyyzz','Ariel','Gamiño','This', 'his','bliss','and', 'that','What', 'is', 'the','deal','Merry','arry','hat','l']
+tokenized_text = ['xwwwyyyzz','Ariel','Gamino','This', 'his','bliss','and', 'that','What', 'is', 'the','deal','Merry','arry','hat','l']
 a = get_most_frequent_letters(tokenized_text, 10)
 print(a)
 

@@ -4,7 +4,7 @@ This repository contains the code in response to the [Fellowship.ai challenge] (
 
 I experimented with different ways to generate features to use for training. I started by looking at the most common words and letters for each language and trying multiple hyperparameter combinations. I then introduced the top 10, three letter endings for each language and the most used common letters.   At the end the latter gave the best results (see table at bottom of page).
 
-The [Detect Language  Final] (Detect%20Language%20Final.ipynb) jupyter notebook is a good summary that shows the steps and the result.
+The [Detect Language Final] (http://Detect%20Language%20Final.ipynb) jupyter notebook is a good summary that shows the steps and the result.
 
 Also of note, the [final_hyperparameter_tuning_using_percentage_of_words.py] (final_hyperparameter_tuning_using_percentage_of_words.py) contains the hyperparameter tuning code.
 

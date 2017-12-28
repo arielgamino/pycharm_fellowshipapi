@@ -11,7 +11,7 @@ Also of note, the [final_hyperparameter_tuning_using_percentage_of_words.py](fin
 
 ## Getting Started
 
-The corpora given on the challenge is the [European Parliament Proceedings Parallel Corpus] (http://www.statmt.org/europarl/). This includes 21 different languages. 
+The corpora given on the challenge is the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/). This includes 21 different languages.
 
 File Structure:
 

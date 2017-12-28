@@ -22,8 +22,8 @@ def test_europarltest_file(eurofile, resultsfile, everyother, classifier, word_f
     fileout.write('predicted, language given, correctly classified?\n')
 
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    file_correctly = open('correctly_classified_'+timestamp, 'w')
-    file_incorrectly = open('incorrectly_classified_' + timestamp, 'w')
+    file_correctly = open('stats/correctly_classified_'+timestamp, 'w')
+    file_incorrectly = open('stats/incorrectly_classified_' + timestamp, 'w')
 
     language_counter = Counter()
 
@@ -69,8 +69,8 @@ def test_europarltest_file_words(eurofile, resultsfile, everyother, classifier, 
     fileout.write('predicted, language given, correctly classified?\n')
 
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    file_correctly = open('correctly_classified_' + timestamp, 'w')
-    file_incorrectly = open('incorrectly_classified_' + timestamp, 'w')
+    file_correctly = open('stats/correctly_classified_' + timestamp, 'w')
+    file_incorrectly = open('stats/incorrectly_classified_' + timestamp, 'w')
 
     language_counter = Counter()
 
@@ -106,3 +106,36 @@ def test_europarltest_file_words(eurofile, resultsfile, everyother, classifier, 
     file_incorrectly.close()
 
     return total_ctr, positive_ctr, negative_ctr, language_counter
+
+def test_europarltest_file_final(eurofile, classifier, word_features, number_of_common_letters):
+    # Read test file and classify each sentence in file
+    positive_ctr = 0
+    negative_ctr = 0
+    total_ctr = 0
+
+    language_counter = Counter()
+
+    processed_counter = 0
+    with open(eurofile, 'r') as f:
+        for line in f:
+            processed_counter += 1
+            total_ctr += 1
+            # language is first two letters in line
+            language = line[:2]
+            # sentence is rest, clean up spaces
+            sentence = line[2:].strip()
+            # Detect language based on model
+            language_detected = classify_document_words(sentence, classifier, word_features, number_of_common_letters)
+            correctly_classified = language_detected == language
+            # tally correct and incorrect
+            if (correctly_classified):
+                # correctly classified
+                positive_ctr += 1
+                language_counter[language + '_correct'] += 1
+            else:
+                # incorrectly classified
+                negative_ctr += 1
+                language_counter[language + '_incorrect'] += 1
+
+    return total_ctr, positive_ctr, negative_ctr, language_counter
+

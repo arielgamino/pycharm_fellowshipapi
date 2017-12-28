@@ -141,6 +141,27 @@ def document_features(document, word_features, letter_features):
         features[l] = (l in document_alphabet)
     return features
 
+"""
+It takes a tokenized document and returns the feature set.
+Three parts to the feature set: common letters, common ending, and common words
+
+common_letters:
+    features['common_letters_2'] = 'tl'
+    features['common_letters_3'] = 'tlp'
+    features['common_letters_4'] = 'tlpo'
+
+common_ending: 10 of the most 3 letter common ending
+    features['common_ending_1'] = 'ing'
+    features['common_ending_2'] = 'ter'
+    ...
+    features['common_ending_10'] = 'ong'
+
+common_words: top % of words use in each language
+    features['estacion'] = True
+    features['corriendo'] = False
+    ...
+    features['code'] = True
+"""
 def document_features_fromwords(document, word_features, number_of_common_letters):
     #normalize words
     document = [w.lower() for w in document]
@@ -399,15 +420,6 @@ def extract_wordsletters_from_corpora_pickles_save_stats_files(pickle_directory,
             file_out.write(k+","+str(v)+"\n")
         file_out.close()
 
-
-    # # return only up to the amount required
-    # for lang in most_common_words:
-    #     word_limit = number_of_words if (number_of_words >= 0) else len(most_common_words[lang])
-    #     most_common_words[lang] = most_common_words[lang].most_common(word_limit)
-    #
-    # for lang in most_common_letters:
-    #     letter_limit = number_of_letters if (number_of_letters >= 0) else len(most_common_letters[lang])
-    #     most_common_letters[lang] = most_common_letters[lang].most_common(letter_limit)
 
     return most_common_words, most_common_letters
 

@@ -1,0 +1,371 @@
+MacPro 
+
+-------------------------------------------------
+Number of documents to extract: 1000
+Elapsed time reading all documents:0:02:51
+Total Documents:21000
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:20
+Elapsed time reading all words, letters:0:01:10
+all_documents:21000
+most_common_words:21
+bg words:11
+cs words:68
+da words:61
+de words:155
+el words:13
+en words:85
+es words:54
+et words:129
+fi words:74
+fr words:104
+hu words:69
+it words:75
+lt words:92
+lv words:79
+nl words:65
+pl words:99
+pt words:50
+ro words:31
+sk words:68
+sl words:102
+sv words:7
+words_features:1491
+Elapsed time featureset creation:0:03:56
+featuresets:21000
+Train set:16800
+Test set:4200
+Elapsed time for training:0:00:52
+Classifier Accuracy:0.8214285714285714
+Elapsed time for accuracy testing:0:04:18
+       bg_correct:50
+       cs_correct:34
+       cs_incorrect:16
+       da_incorrect:47
+       da_correct:3
+       de_incorrect:50
+       el_correct:47
+       el_incorrect:3
+       en_incorrect:50
+       es_incorrect:48
+       es_correct:2
+       et_correct:36
+       et_incorrect:14
+       fi_incorrect:46
+       fi_correct:4
+       fr_incorrect:50
+       hu_correct:47
+       hu_incorrect:3
+       it_incorrect:49
+       it_correct:1
+       lt_correct:45
+       lt_incorrect:5
+       lv_correct:37
+       lv_incorrect:13
+       nl_incorrect:48
+       nl_correct:2
+       pl_correct:43
+       pl_incorrect:7
+       pt_incorrect:46
+       pt_correct:4
+       ro_correct:48
+       ro_incorrect:2
+       sk_correct:41
+       sk_incorrect:9
+       sl_incorrect:10
+       sl_correct:40
+       sv_correct:47
+       sv_incorrect:3
+       Total attempted: 1050
+  Classified correctly: 531
+Classified incorrectly: 519
+  Europartest Accuracy: 50.57142857142857
+Elapsed time for accuracy testing:0:01:05
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:20
+Elapsed time reading all words, letters:0:01:07
+all_documents:21000
+most_common_words:21
+bg words:11
+cs words:68
+da words:61
+de words:155
+el words:13
+en words:85
+es words:54
+et words:129
+fi words:74
+fr words:104
+hu words:69
+it words:75
+lt words:92
+lv words:79
+nl words:65
+pl words:99
+pt words:50
+ro words:31
+sk words:68
+sl words:102
+sv words:7
+words_features:1491
+Elapsed time featureset creation:0:03:59
+featuresets:21000
+Train set:16800
+Test set:4200
+Elapsed time for training:0:00:50
+Classifier Accuracy:0.8107142857142857
+Elapsed time for accuracy testing:0:04:21
+       bg_correct:50
+       cs_correct:35
+       cs_incorrect:15
+       da_incorrect:46
+       da_correct:4
+       de_incorrect:50
+       el_correct:47
+       el_incorrect:3
+       en_incorrect:50
+       es_incorrect:46
+       es_correct:4
+       et_correct:38
+       et_incorrect:12
+       fi_incorrect:46
+       fi_correct:4
+       fr_incorrect:50
+       hu_correct:47
+       hu_incorrect:3
+       it_incorrect:49
+       it_correct:1
+       lt_correct:48
+       lt_incorrect:2
+       lv_correct:36
+       lv_incorrect:14
+       nl_incorrect:46
+       nl_correct:4
+       pl_correct:42
+       pl_incorrect:8
+       pt_incorrect:45
+       pt_correct:5
+       ro_correct:48
+       ro_incorrect:2
+       sk_correct:38
+       sk_incorrect:12
+       sl_incorrect:8
+       sl_correct:42
+       sv_correct:46
+       sv_incorrect:4
+       Total attempted: 1050
+  Classified correctly: 539
+Classified incorrectly: 511
+  Europartest Accuracy: 51.33333333333333
+Elapsed time for accuracy testing:0:01:05
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:40
+Elapsed time reading all words, letters:0:01:07
+all_documents:21000
+most_common_words:21
+bg words:102
+cs words:324
+da words:292
+de words:624
+el words:126
+en words:332
+es words:217
+et words:697
+fi words:533
+fr words:397
+hu words:443
+it words:297
+lt words:483
+lv words:428
+nl words:282
+pl words:467
+pt words:193
+ro words:197
+sk words:377
+sl words:502
+sv words:29
+words_features:7342
+Elapsed time featureset creation:0:04:24
+featuresets:21000
+Train set:16800
+Test set:4200
+Elapsed time for training:0:04:23
+Classifier Accuracy:0.7723809523809524
+Elapsed time for accuracy testing:0:21:59
+       bg_correct:50
+       cs_correct:39
+       cs_incorrect:11
+       da_incorrect:50
+       de_incorrect:50
+       el_incorrect:36
+       el_correct:14
+       en_incorrect:50
+       es_incorrect:50
+       et_correct:42
+       et_incorrect:8
+       fi_incorrect:50
+       fr_incorrect:50
+       hu_correct:46
+       hu_incorrect:4
+       it_incorrect:50
+       lt_correct:43
+       lt_incorrect:7
+       lv_correct:39
+       lv_incorrect:11
+       nl_incorrect:50
+       pl_correct:46
+       pl_incorrect:4
+       pt_incorrect:50
+       ro_correct:47
+       ro_incorrect:3
+       sk_correct:41
+       sk_incorrect:9
+       sl_incorrect:5
+       sl_correct:45
+       sv_correct:41
+       sv_incorrect:9
+       Total attempted: 1050
+  Classified correctly: 493
+Classified incorrectly: 557
+  Europartest Accuracy: 46.95238095238095
+Elapsed time for accuracy testing:0:05:35
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:40
+Elapsed time reading all words, letters:0:01:10
+all_documents:21000
+most_common_words:21
+bg words:102
+cs words:324
+da words:292
+de words:624
+el words:126
+en words:332
+es words:217
+et words:697
+fi words:533
+fr words:397
+hu words:443
+it words:297
+lt words:483
+lv words:428
+nl words:282
+pl words:467
+pt words:193
+ro words:197
+sk words:377
+sl words:502
+sv words:29
+words_features:7342
+Elapsed time featureset creation:0:04:36
+featuresets:21000
+Train set:16800
+Test set:4200
+Elapsed time for training:0:04:36
+Classifier Accuracy:0.7804761904761904
+Elapsed time for accuracy testing:0:22:20
+       bg_correct:50
+       cs_correct:37
+       cs_incorrect:13
+       da_incorrect:50
+       de_incorrect:50
+       el_incorrect:35
+       el_correct:15
+       en_incorrect:50
+       es_incorrect:50
+       et_correct:43
+       et_incorrect:7
+       fi_incorrect:50
+       fr_incorrect:50
+       hu_correct:45
+       hu_incorrect:5
+       it_incorrect:50
+       lt_correct:43
+       lt_incorrect:7
+       lv_correct:40
+       lv_incorrect:10
+       nl_incorrect:50
+       pl_correct:46
+       pl_incorrect:4
+       pt_incorrect:50
+       ro_correct:46
+       ro_incorrect:4
+       sk_correct:39
+       sk_incorrect:11
+       sl_incorrect:6
+       sl_correct:44
+       sv_correct:42
+       sv_incorrect:8
+       Total attempted: 1050
+  Classified correctly: 490
+Classified incorrectly: 560
+  Europartest Accuracy: 46.666666666666664
+Elapsed time for accuracy testing:0:05:27
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Percentage of common words to use:70
+Elapsed time reading all words, letters:0:01:08
+all_documents:21000
+most_common_words:21
+bg words:1128
+cs words:2020
+da words:1761
+de words:3274
+el words:1470
+en words:1507
+es words:1123
+et words:5013
+fi words:4927
+fr words:1907
+hu words:3999
+it words:1513
+lt words:3147
+lv words:2811
+nl words:1476
+pl words:3093
+pt words:935
+ro words:1544
+sk words:2435
+sl words:2958
+sv words:577
+words_features:48618
+Elapsed time featureset creation:0:07:26
+featuresets:21000
+Train set:16800
+Test set:4200
+Elapsed time for training:0:33:52
+Classifier Accuracy:0.7507142857142857
+Elapsed time for accuracy testing:2:34:33
+       bg_correct:50
+       cs_correct:40
+       cs_incorrect:10
+       da_incorrect:50
+       de_incorrect:50
+       el_incorrect:50
+       en_incorrect:50
+       es_incorrect:50
+       et_correct:46
+       et_incorrect:4
+       fi_incorrect:50
+       fr_incorrect:50
+       hu_correct:46
+       hu_incorrect:4
+       it_incorrect:50
+       lt_correct:43
+       lt_incorrect:7
+       lv_correct:38
+       lv_incorrect:12
+       nl_incorrect:50
+       pl_correct:45
+       pl_incorrect:5
+       pt_incorrect:50
+       ro_correct:45
+       ro_incorrect:5
+       sk_correct:41
+       sk_incorrect:9
+       sl_correct:45
+       sl_incorrect:5
+       sv_incorrect:50
+       Total attempted: 1050
+  Classified correctly: 439
+Classified incorrectly: 611
+  Europartest Accuracy: 41.80952380952381
+Elapsed time for accuracy testing:0:38:32

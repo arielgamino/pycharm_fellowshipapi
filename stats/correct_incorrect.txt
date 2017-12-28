@@ -1,0 +1,453 @@
+documents:5000
+percentage: 5
+letters: 5
+
+       et_correct:88
+       en_incorrect:4
+       cs_incorrect:10
+       lv_correct:98
+       sk_correct:84
+       ro_incorrect:3
+       de_correct:87
+       hu_incorrect:2
+       pl_incorrect:5
+       lt_correct:93
+       de_incorrect:13
+       lt_incorrect:7
+       fr_correct:95
+       da_incorrect:6
+       it_correct:96
+       es_incorrect:10
+       nl_correct:99
+       nl_incorrect:1
+       et_incorrect:12
+       pt_correct:98
+       fi_correct:97
+       hu_correct:98
+       es_correct:90
+       pt_incorrect:2
+       fr_incorrect:5
+       sl_correct:96
+       ro_correct:97
+       en_correct:96
+       el_correct:100
+       sv_incorrect:1
+       bg_correct:100
+       cs_correct:90
+       sv_correct:99
+       lv_incorrect:2
+       fi_incorrect:3
+       pl_correct:95
+       sl_incorrect:4
+       da_correct:94
+       it_incorrect:4
+       sk_incorrect:16
+	   
+	   documents:5000
+	   percentage: 10
+	   letters: 5
+	   
+       et_correct:86
+       en_incorrect:4
+       cs_incorrect:3
+       lv_correct:98
+       sk_correct:81
+       de_correct:72
+       hu_incorrect:1
+       pl_incorrect:6
+       lt_correct:97
+       de_incorrect:28
+       lt_incorrect:3
+       fr_correct:89
+       da_incorrect:5
+       it_correct:97
+       es_incorrect:13
+       nl_correct:100
+       et_incorrect:14
+       pt_correct:97
+       fi_correct:96
+       hu_correct:99
+       es_correct:87
+       pt_incorrect:3
+       fr_incorrect:11
+       sl_correct:95
+       ro_correct:100
+       en_correct:96
+       el_correct:100
+       sv_incorrect:2
+       bg_correct:100
+       cs_correct:97
+       sv_correct:98
+       lv_incorrect:2
+       fi_incorrect:4
+       pl_correct:94
+       sl_incorrect:5
+       da_correct:95
+       it_incorrect:3
+       sk_incorrect:19
+	   
+	   documents:5000
+	   percentage: 15
+	   letters: 5
+	   
+       et_correct:81
+       en_incorrect:6
+       cs_incorrect:4
+       lv_correct:98
+       sk_correct:81
+       de_correct:42
+       hu_incorrect:3
+       pl_incorrect:9
+       lt_correct:95
+       de_incorrect:58
+       lt_incorrect:5
+       fr_correct:85
+       da_incorrect:11
+       it_correct:91
+       es_incorrect:14
+       nl_correct:100
+       et_incorrect:19
+       pt_correct:98
+       fi_correct:88
+       hu_correct:97
+       es_correct:86
+       pt_incorrect:2
+       fr_incorrect:15
+       sl_correct:91
+       ro_correct:100
+       en_correct:94
+       el_correct:100
+       sv_incorrect:6
+       bg_correct:100
+       cs_correct:96
+       sv_correct:94
+       lv_incorrect:2
+       fi_incorrect:12
+       pl_correct:91
+       sl_incorrect:9
+       da_correct:89
+       it_incorrect:9
+       sk_incorrect:19
+	   
+	   documents:1000
+	   percentage: 5
+	   letters: 5
+	   
+       es_incorrect:7
+       es_correct:93
+       el_correct:100
+       nl_incorrect:2
+       lv_correct:93
+       de_incorrect:28
+       sv_incorrect:9
+       nl_correct:98
+       fi_correct:92
+       fr_correct:89
+       bg_correct:100
+       fi_incorrect:8
+       en_incorrect:11
+       sl_incorrect:12
+       ro_incorrect:5
+       sk_incorrect:25
+       sv_correct:91
+       et_incorrect:22
+       cs_incorrect:16
+       pl_incorrect:12
+       lt_incorrect:9
+       cs_correct:84
+       it_correct:87
+       de_correct:72
+       pl_correct:88
+       da_incorrect:13
+       sl_correct:88
+       hu_incorrect:5
+       sk_correct:75
+       en_correct:89
+       da_correct:87
+       hu_correct:95
+       it_incorrect:13
+       ro_correct:95
+       lv_incorrect:7
+       pt_correct:88
+       fr_incorrect:11
+       lt_correct:91
+       pt_incorrect:12
+       et_correct:78
+	   
+	   documents:1000
+	   percentage: 10
+	   letters: 5
+	   
+       es_incorrect:7
+       es_correct:93
+       el_correct:100
+       lv_correct:97
+       lv_incorrect:3
+       sv_incorrect:10
+       de_correct:49
+       fi_correct:88
+       fr_correct:76
+       bg_correct:100
+       fi_incorrect:12
+       en_incorrect:18
+       sl_incorrect:13
+       ro_incorrect:5
+       sk_incorrect:24
+       sv_correct:90
+       et_incorrect:28
+       cs_incorrect:5
+       pl_incorrect:14
+       lt_incorrect:6
+       cs_correct:95
+       it_correct:80
+       de_incorrect:51
+       pl_correct:86
+       da_incorrect:10
+       sl_correct:87
+       hu_incorrect:4
+       sk_correct:76
+       en_correct:82
+       da_correct:90
+       hu_correct:96
+       it_incorrect:20
+       ro_correct:95
+       nl_correct:100
+       pt_correct:77
+       fr_incorrect:24
+       lt_correct:94
+       pt_incorrect:23
+       et_correct:72
+	   
+	   documents:1000
+	   percentage: 15
+	   letters: 5
+	   
+       es_incorrect:1
+       es_correct:99
+       el_correct:99
+       lv_correct:93
+       lv_incorrect:7
+       sv_incorrect:15
+       de_correct:29
+       fi_correct:84
+       fr_correct:66
+       bg_correct:100
+       fi_incorrect:16
+       en_incorrect:21
+       el_incorrect:1
+       sl_incorrect:20
+       ro_incorrect:2
+       sk_incorrect:21
+       sv_correct:85
+       et_incorrect:35
+       cs_incorrect:8
+       pl_incorrect:25
+       lt_incorrect:8
+       cs_correct:92
+       it_correct:70
+       de_incorrect:71
+       pl_correct:75
+       da_incorrect:15
+       sl_correct:80
+       hu_incorrect:6
+       sk_correct:79
+       en_correct:79
+       da_correct:85
+       hu_correct:94
+       it_incorrect:30
+       ro_correct:98
+       nl_correct:100
+       pt_correct:68
+       fr_incorrect:34
+       lt_correct:92
+       pt_incorrect:32
+       et_correct:65
+	   
+	   documents:3000
+	   percentage: 5
+	   letters: 5
+	   
+       es_incorrect:4
+       es_correct:96
+       el_correct:100
+       nl_incorrect:1
+       lv_correct:95
+       de_incorrect:18
+       sv_incorrect:4
+       nl_correct:99
+       fi_correct:94
+       fr_correct:93
+       bg_correct:100
+       fi_incorrect:6
+       en_incorrect:7
+       sl_incorrect:9
+       ro_incorrect:5
+       sk_incorrect:17
+       sv_correct:96
+       et_incorrect:16
+       cs_incorrect:9
+       pl_incorrect:2
+       lt_incorrect:9
+       cs_correct:91
+       it_correct:92
+       de_correct:82
+       pl_correct:98
+       da_incorrect:7
+       sl_correct:91
+       hu_incorrect:2
+       sk_correct:83
+       en_correct:93
+       da_correct:93
+       hu_correct:98
+       it_incorrect:8
+       ro_correct:95
+       lv_incorrect:5
+       pt_correct:91
+       fr_incorrect:7
+       lt_correct:91
+       pt_incorrect:9
+       et_correct:84
+	   
+	   documents:3000
+	   percentage: 10
+	   letters: 5
+	   
+       es_incorrect:4
+       es_correct:96
+       el_correct:100
+       nl_incorrect:1
+       lv_correct:98
+       lv_incorrect:2
+       sv_incorrect:7
+       de_correct:66
+       fi_correct:95
+       fr_correct:84
+       bg_correct:100
+       fi_incorrect:5
+       en_incorrect:7
+       sl_incorrect:8
+       ro_incorrect:3
+       sk_incorrect:16
+       sv_correct:93
+       et_incorrect:16
+       cs_incorrect:3
+       pl_incorrect:7
+       lt_incorrect:5
+       cs_correct:97
+       it_correct:87
+       de_incorrect:34
+       pl_correct:93
+       da_incorrect:3
+       sl_correct:92
+       hu_incorrect:3
+       sk_correct:84
+       en_correct:93
+       da_correct:97
+       hu_correct:97
+       it_incorrect:13
+       ro_correct:97
+       nl_correct:99
+       pt_correct:88
+       fr_incorrect:16
+       lt_correct:95
+       pt_incorrect:12
+       et_correct:84
+	   
+	   documents:3000
+	   percentage: 10
+	   letters: 15
+	   
+       es_incorrect:1
+       es_correct:99
+       el_correct:99
+       lv_correct:97
+       lv_incorrect:3
+       sv_incorrect:7
+       de_correct:47
+       fi_correct:86
+       fr_correct:76
+       bg_correct:100
+       fi_incorrect:14
+       en_incorrect:7
+       el_incorrect:1
+       sl_incorrect:9
+       ro_incorrect:2
+       sk_incorrect:20
+       sv_correct:93
+       et_incorrect:25
+       cs_incorrect:5
+       pl_incorrect:13
+       lt_incorrect:5
+       cs_correct:95
+       it_correct:81
+       de_incorrect:53
+       pl_correct:87
+       da_incorrect:8
+       sl_correct:91
+       hu_incorrect:4
+       sk_correct:80
+       en_correct:93
+       da_correct:92
+       hu_correct:96
+       it_incorrect:19
+       ro_correct:98
+       nl_correct:100
+       pt_correct:75
+       fr_incorrect:24
+       lt_correct:95
+       pt_incorrect:25
+       et_correct:75
+	   
+	   documents:3000
+	   percentage: 20
+	   letters: 5
+	   
+       et_correct:88
+       en_incorrect:4
+       cs_incorrect:10
+       lv_correct:98
+       sk_correct:84
+       ro_incorrect:3
+       de_correct:87
+       hu_incorrect:2
+       pl_incorrect:5
+       lt_correct:93
+       de_incorrect:13
+       lt_incorrect:7
+       fr_correct:95
+       da_incorrect:6
+       it_correct:96
+       es_incorrect:10
+       nl_correct:99
+       nl_incorrect:1
+       et_incorrect:12
+       pt_correct:98
+       fi_correct:97
+       hu_correct:98
+       es_correct:90
+       pt_incorrect:2
+       fr_incorrect:5
+       sl_correct:96
+       ro_correct:97
+       en_correct:96
+       el_correct:100
+       sv_incorrect:1
+       bg_correct:100
+       cs_correct:90
+       sv_correct:99
+       lv_incorrect:2
+       fi_incorrect:3
+       pl_correct:95
+       sl_incorrect:4
+       da_correct:94
+       it_incorrect:4
+       sk_incorrect:16
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   

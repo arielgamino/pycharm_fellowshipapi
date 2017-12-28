@@ -11,7 +11,7 @@ stats_out = []
 europarl_testfile = "europarl.test"
 
 #for number_of_documents in [500, 1000, 3000, 5000]:
-for number_of_documents in [1000,5000,9000]:
+for number_of_documents in [1000,5000]:
     # -------------Step 1-------------
     # ----READ FROM PICKLE FILES (Pre-read)----
     # Get data to create features from corpora
@@ -26,7 +26,7 @@ for number_of_documents in [1000,5000,9000]:
     print("Total Documents:" + str(len(all_documents)))
 
     stats = collections.OrderedDict()
-    for hyperparameters in [(20,5),(20,10),(40,5),(40,10),(70,5)]:
+    for hyperparameters in [(0,5),(0,7),(0,10),(0,15)]:
         upto_percentage = hyperparameters[0]
         number_of_common_letters = hyperparameters[1]
         print("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")

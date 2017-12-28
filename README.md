@@ -1,12 +1,12 @@
-# Language Detection  Fellowship.ai challenge
+# Language Detection Fellowship.ai challenge
 
 This repository contains the code in response to the [Fellowship.ai challenge] (https://fellowship.ai/challenge/) for language detection. It uses the nltk libray and is written in Python.
 
 I experimented with different ways to generate features to use for training. I started by looking at the most common words and letters for each language and trying multiple hyperparameter combinations. I then introduced the top 10, three letter endings for each language and the most used common letters.   At the end the latter gave the best results (see table at bottom of page).
 
-The [Detect Language  Final] (Detect%20Language%20-%20Final.ipynb) jupyter notebook is a good summary that shows the steps and the result.
+The [Detect Language  Final] (Detect%20Language%20Final.ipynb) jupyter notebook is a good summary that shows the steps and the result.
 
-Also of note, the [final_hyperparameter_tuning_using_percentage_of_words.py] contains the hyperparameter tuning code. 
+Also of note, the [final_hyperparameter_tuning_using_percentage_of_words.py] (final_hyperparameter_tuning_using_percentage_of_words.py) contains the hyperparameter tuning code.
 
 
 ## Getting Started
@@ -15,13 +15,13 @@ The corpora given on the challenge is the [European Parliament Proceedings Paral
 
 File Structure:
 
-* txt  contains the unzipped corpora. There are 21 folders each contain the documents for each language (bg, es, et, fi, fr, etc.). **Note:** Do to its size, this repository does not contain the actual files. They must be downloaded manually and install in this folder if they wished to be processed.
+* txt: contains the unzipped corpora. There are 21 folders each contain the documents for each language (bg, es, et, fi, fr, etc.). **Note:** Do to its size, this repository does not contain the actual files. They must be downloaded manually and install in this folder if they wished to be processed.
 
-* pickles  contains all documents from corpora, all words found and all letters used on each language. These files are serialized(pickle) from their original format and used to train the classifiers. Instead of reading the raw files from txt directory every time, I used this for faster training.
+* pickles: contains all documents from corpora, all words found and all letters used on each language. These files are serialized(pickle) from their original format and used to train the classifiers. Instead of reading the raw files from txt directory every time, I used this for faster training.
 
-* models  contains deployed models once trained. This is used on the last step to evaluate accuracy of different models against the entire test file.
+* models: contains deployed models once trained. This is used on the last step to evaluate accuracy of different models against the entire test file.
 
-* util  is a Python package with functions used in this repository. c
+* util: is a Python package with functions used in this repository. c
 
 #This project was divided into six steps:
 

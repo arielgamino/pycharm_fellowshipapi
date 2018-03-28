@@ -66,60 +66,60 @@ Extract most common words up per each language and create featureset for each do
 Feature set contains the most common words for all languages (using upto_percentage),the the top n word endings and the top n letters for that language.
 
 Example of feature set for a Polish(pl) document when upto_percentage=5, number_of_common_letters=7:
-({'aasta': False,
-  'abbiamo': False,
-  'affected': False,
-  'ako': False,  
-  'amendements': False,
-  'anderen': False,
-  'andra': False,
-  'apie': False,  
-  'arī': False,
-  'at': False,
-  'aujourd': False,
-  'bereits': False,
-  'buvo': False,
-  'být': False,
-  'būtų': False,
-  'comissão': False,
-  'commissie': False,
-  'common_ending_top_1': 'trz',
-  'common_ending_top_2': 'kół',
-  'common_ending_top_3': 'nie',
-  'common_ending_top_4': 'ołu',
-  'common_ending_top_5': 'z',
-  'common_ending_top_6': 'ego',
-  'common_ending_top_7': 'nia',
-  'common_letters_2': 'oe',
-  'common_letters_3': 'oep',
-  'common_letters_4': 'oepz',
-  'common_letters_5': 'oepzr',
-  'common_letters_6': 'oepzri',
-  'common_letters_7': 'oepzrit',
-  'completely': False,
-  'concernant': False,
-   ....})
-
+  
+({'aasta': False,'abbiamo': False,  
+  'affected': False,  
+  'ako': False,    
+  'amendements': False,  
+  'anderen': False,  
+  'andra': False,    
+  'apie': False,    
+  'arī': False,  
+  'at': False,  
+  'aujourd': False,  
+  'bereits': False,  
+  'buvo': False,  
+  'být': False,  
+  'būtų': False,  
+  'comissão': False,  
+  'commissie': False,  
+  'common_ending_top_1': 'trz',  
+  'common_ending_top_2': 'kół',  
+  'common_ending_top_3': 'nie',  
+  'common_ending_top_4': 'ołu',  
+  'common_ending_top_5': 'z',  
+  'common_ending_top_6': 'ego',  
+  'common_ending_top_7': 'nia',  
+  'common_letters_2': 'oe',  
+  'common_letters_3': 'oep',  
+  'common_letters_4': 'oepz',  
+  'common_letters_5': 'oepzr',  
+  'common_letters_6': 'oepzri',  
+  'common_letters_7': 'oepzrit',  
+  'completely': False,  
+  'concernant': False,  
+   ....})  
+  
 Example of feature set for a Bulgarian(bg) document when upto_percentage =0 (only use letters and endings):
-
-({'common_ending_top_1': 'ния',
-  'common_ending_top_10': 'по',
-  'common_ending_top_2': 'ата',
-  'common_ending_top_3': 'и',
-  'common_ending_top_4': 'чаи',
-  'common_ending_top_5': 'на',
+  
+({'common_ending_top_1': 'ния',  
+  'common_ending_top_10': 'по',  
+  'common_ending_top_2': 'ата',  
+  'common_ending_top_3': 'и',  
+  'common_ending_top_4': 'чаи',  
+  'common_ending_top_5': 'на',  
   'common_ending_top_6': 'ята',
-  'common_ending_top_7': 'ипа',
-  'common_ending_top_8': 'ава',
-  'common_ending_top_9': 'ане',
-  'common_letters_2': 'аи',
-  'common_letters_3': 'аир',
-  'common_letters_4': 'аирв',
-  'common_letters_5': 'аирвн',
-  'common_letters_6': 'аирвнп',
-  'common_letters_7': 'аирвнпк'},
- 'bg')
-
+  'common_ending_top_7': 'ипа',  
+  'common_ending_top_8': 'ава',  
+  'common_ending_top_9': 'ане',  
+  'common_letters_2': 'аи',  
+  'common_letters_3': 'аир',  
+  'common_letters_4': 'аирв',  
+  'common_letters_5': 'аирвн',  
+  'common_letters_6': 'аирвнп',  
+  'common_letters_7': 'аирвнпк'},  
+ 'bg')  
+  
 
 **Step 3**
 Divide date set into training and test sets
@@ -178,3 +178,4 @@ This is only if you are to generate models by tweaking the different hyperparame
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
+ 

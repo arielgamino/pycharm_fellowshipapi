@@ -134,8 +134,8 @@ Deploy model against the europarl.test test file and show score of model. This t
 
 After tuning three hyperparameters (documents to extract, percentage of top words, and number of common letters) the best result against the europarl.test was of **94.75**.  The following table shows the different scores obtained based on the different parameters.
 
-FINAL ACCURACY|Documents to extract|Top percentage of words to use|Number of common Letters to use|Classifier accuracy on test set|Europarl test accuracy|Model accuracy against europarl.test|All documents processed|Number of features used|Training set|Test set|Classifier accuracy on test set|Europarl test accuracy|Model accuracy against europarl.test
---------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------| 
+FINAL ACCURACY|Documents to extract|Top percentage of words to use|Number of common Letters to use|Classifier accuracy on test set|Model accuracy against europarl.test|All documents processed|Number of features used|Training set|Test set|  
+--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------| 
 |94.75|5000|0|10|96.59|94.75|105000|0|84000|21000|  
 |94.73|5000|0|7|96.87|94.73|105000|0|84000|21000|  
 |94.66|5000|0|5|96.54|94.66|105000|0|84000|21000|  

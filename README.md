@@ -31,52 +31,23 @@ Process all files on the corpora, and extract the text from each one of the file
 
 * word_counter_LANGUAGE: List of all words found in LANGUAGE and frequency.
 
-Example for Spanish (LANGUAGE=es): 
-[('de', 3844857),
- ('la', 2495865),
- ('que', 2051997),
- ('en', 1531406),
- ('y', 1423324),
- ('el', 1375508),
- ('a', 1214092),
- ('los', 1122279),
- ('las', 769056),
- ('del', 647907),
- ('se', 599276),
- ('un', 525228),....]
+     Example for Spanish (LANGUAGE=es):
+
+     [('de', 3844857),('la', 2495865),('que', 2051997),('en', 1531406),('y', 1423324),('el', 1375508),....]
 
 * alphabet_LANGUAGE: List most common letters in LANGUAGE and frequency.
 
-Example for Spanish:
-[('e', 37484208),
- ('a', 30954351),
- ('o', 24468965),
- ('s', 21601056),
- ('n', 20135162),
- ('r', 18729049),
- ('i', 18385328),
- ('l', 14034560),
- ('d', 13683097),
- ('t', 13136263),
- ('c', 12247296),
- ('u', 10745969),....]
+     Example for Spanish:
+     
+     [('e', 37484208),('a', 30954351),('o', 24468965),('s', 21601056),('n', 20135162),....]
 
 * documents_LANGUAGE: List of tuples for each document of the form:
 
-([‘word1’,’word2’,'word3',...],'LANGUAGE')
+     ([‘word1’,’word2’,'word3',...],'LANGUAGE')
 
-Example:
-(['Preguntas',
-  'orales',
-  'y',
-  'declaraciones',
-  'por',
-  'escrito',
-  'presentación',
-  'véase',
-  'el',
-  'Acta'],
- 'es')
+     Example:
+     
+     (['Preguntas','orales','y','declaraciones','por','escrito','presentación','véase','el','Acta'],'es')
 
 ![pickles directory and files](images/step1.png)
 

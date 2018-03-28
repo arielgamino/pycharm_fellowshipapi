@@ -170,7 +170,7 @@ Generate pickle files by rooning the Create Pickles from Corpora.
 
 ## Deployment
 
-Once the models have been generated, you can run the [Deploy - Loop through classifiers for testing of Europarl.test file] (Deploy%20Loop%20through%20classifiers%20for%20testing%20of%20Europarl.test%20file.ipynb) notebook to test against the europarl.test file.
+Once the models have been generated, you can run the [Deploy - Loop through classifiers for testing of Europarl.test file](Deploy%20Loop%20through%20classifiers%20for%20testing%20of%20Europarl.test%20file.ipynb) notebook to test against the europarl.test file.
 This is only if you are to generate models by tweaking the different hyperparameters.
 
 ## License

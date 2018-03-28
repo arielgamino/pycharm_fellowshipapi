@@ -21,11 +21,13 @@ File Structure:
 
 * models: contains deployed models once trained. This is used on the last step to evaluate accuracy of different models against the entire test file.
 
-* util: is a Python package with functions used in this repository. c
+* util: is a Python package with functions used in this repository. 
 
 #This project was divided into six steps:
 
-**Step 1**
+**Step 0**
+
+This is pre-processing step. Only ran as data preparation to convert data into a easier and faster to read format.
 
 Process all files on the corpora, and extract the text from each one of the files by removing any HTML tag. Save data as pickles files for easier processing when hypertuning. The [Create Pickles from Corporate](Create%20Pickles%20from%20Corpora.ipynb) reads the /txt directory and creates the processed serialized version in /pickles.  Three files are created for each language:
 
@@ -51,8 +53,73 @@ Process all files on the corpora, and extract the text from each one of the file
 
 ![pickles directory and files](images/step1.png)
 
+**Step 1**
+Read pickle files for processing based on the following parameters:
+
+* number_of_documents      - How many documents from each language to use 
+* upto_percentage          - Percentage of top common words to use per language
+* number_of_common_letters - Number of letters of that language to use
+
 **Step 2**
-Extract most common words up to a defined percentage per each language. This is used as part of the featureset used for training
+Extract most common words up per each language and create featureset for each document. This is used for training. 
+
+Feature set contains the most common words for all languages (using upto_percentage),the the top n word endings and the top n letters for that language.
+
+Example of feature set for a Polish(pl) document when upto_percentage=5, number_of_common_letters=7:
+({'aasta': False,
+  'abbiamo': False,
+  'affected': False,
+  'ako': False,  
+  'amendements': False,
+  'anderen': False,
+  'andra': False,
+  'apie': False,  
+  'arī': False,
+  'at': False,
+  'aujourd': False,
+  'bereits': False,
+  'buvo': False,
+  'být': False,
+  'būtų': False,
+  'comissão': False,
+  'commissie': False,
+  'common_ending_top_1': 'trz',
+  'common_ending_top_2': 'kół',
+  'common_ending_top_3': 'nie',
+  'common_ending_top_4': 'ołu',
+  'common_ending_top_5': 'z',
+  'common_ending_top_6': 'ego',
+  'common_ending_top_7': 'nia',
+  'common_letters_2': 'oe',
+  'common_letters_3': 'oep',
+  'common_letters_4': 'oepz',
+  'common_letters_5': 'oepzr',
+  'common_letters_6': 'oepzri',
+  'common_letters_7': 'oepzrit',
+  'completely': False,
+  'concernant': False,
+   ....})
+
+Example of feature set for a Bulgarian(bg) document when upto_percentage =0 (only use letters and endings):
+
+({'common_ending_top_1': 'ния',
+  'common_ending_top_10': 'по',
+  'common_ending_top_2': 'ата',
+  'common_ending_top_3': 'и',
+  'common_ending_top_4': 'чаи',
+  'common_ending_top_5': 'на',
+  'common_ending_top_6': 'ята',
+  'common_ending_top_7': 'ипа',
+  'common_ending_top_8': 'ава',
+  'common_ending_top_9': 'ане',
+  'common_letters_2': 'аи',
+  'common_letters_3': 'аир',
+  'common_letters_4': 'аирв',
+  'common_letters_5': 'аирвн',
+  'common_letters_6': 'аирвнп',
+  'common_letters_7': 'аирвнпк'},
+ 'bg')
+
 
 **Step 3**
 Divide date set into training and test sets

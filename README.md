@@ -118,8 +118,8 @@ Example of feature set for a Bulgarian(bg) document when upto_percentage =0 (onl
   'common_letters_5': 'аирвн',  
   'common_letters_6': 'аирвнп',  
   'common_letters_7': 'аирвнпк'},  
- 'bg')  
-  
+  'bg')  
+    
 
 **Step 3**
 Divide date set into training and test sets

@@ -58,7 +58,7 @@ Read pickle files for processing based on the following parameters:
 
 * number_of_documents      - How many documents from each language to use 
 * upto_percentage          - Percentage of top common words to use per language
-* number_of_common_letters - Number of letters of that language to use
+* number_of_common_letters - Number of letters of that language to use for endings and for most common letters
 
 **Step 2**
 Extract most common words up per each language and create featureset for each document. This is used for training. 
@@ -122,46 +122,46 @@ Example of feature set for a Bulgarian(bg) document when upto_percentage =0 (onl
     
 
 **Step 3**
-Divide date set into training and test sets
+Divide date set into training and test sets.
 
 **Step 4**
-Build and score the model. Build with training set, score with test set.
+Build and score the model. Build with training set, score with test set. For this model I used a NaiveBayesClassifier.
 
 **Step 5**
-Deploy model against the europarl.test test file and show score of model.
+Deploy model against the europarl.test test file and show score of model. This tries to classify each line on the europarl.test file and calculates whether it did it correctly or not.
 
 ## Results
 
 After tuning three hyperparameters (documents to extract, percentage of top words, and number of common letters) the best result against the europarl.test was of **94.75**.  The following table shows the different scores obtained based on the different parameters.
 
-FINAL ACCURACY|Documents to extract|Top percentage of words to use|Number of common Letters to use|Classifier accuracy on test set|Europarl test accuracy|Model accuracy against europarl.test|All documents processed|Number of features used|Training set|Test set|Classifier accuracy on test set|Europarl test accuracy|Model accuracy against europarl.test
---------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
-94.75|5000|0|10|96.59|92.66|94.75|105000|0|84000|21000|96.59|92.66|94.75
-94.73|5000|0|7|96.87|93.42|94.73|105000|0|84000|21000|96.87|93.42|94.73
-94.66|5000|0|5|96.54|93.33|94.66|105000|0|84000|21000|96.54|93.33|94.66
-94.6|5000|0|15|96.9|92.09|94.6|105000|0|84000|21000|96.9|92.09|94.6
-94.52|10000|5|5|97.03|50|94.52|187071|129|149656|37415|97.03|50|94.52
-93.56|10000|10|10|96.44|55|93.56|187071|415|149656|37415|96.44|55|93.56
-93.51|5000|5|5|96.34|94.76|93.51|110000|121|88000|22000|96.34|94.76|93.51
-92.63|5000|5|5|96.8|66|92.63|105000|129|84000|21000|96.8|66|92.63
-92.6|5000|10|5|95.99|94|92.6|110000|399|88000|22000|95.99|94|92.6
-91.91|5000|10|10|96.41|73|91.91|105000|415|84000|21000|96.41|73|91.91
-91.44|10000|15|5|94.93|87|91.44|187071|856|149656|37415|94.93|87|91.44
-91.39|3000|5|5|96.06|93.09|91.39|66000|119|52800|13200|96.06|93.09|91.39
-90.15|3000|10|5|94.93|92.14|90.15|66000|389|52800|13200|94.93|92.14|90.15
-89.77|5000|15|5|94.25|90.33|89.77|110000|827|88000|22000|94.25|90.33|89.77
-89.05|5000|15|5|94.48|111|89.05|105000|856|84000|21000|94.48|111|89.05
-87.5|10000|20|6|92.35|119|87.5|187071|1491|149656|37415|92.35|119|87.5
-85.88|3000|15|5|93.28|88.33|85.88|66000|805|52800|13200|93.28|88.33|85.88
-85.87|1000|5|5|94.84|89.19|85.87|22000|119|17600|4400|94.84|89.19|85.87
-84.65|3000|20|5|90.65|86.95|84.65|66000|1423|52800|13200|90.65|86.95|84.65
-84.41|1000|10|5|93.38|86.8|84.41|22000|389|17600|4400|93.38|86.8|84.41
-83.98|5000|20|6|91.18|164|83.98|105000|1491|84000|21000|91.18|164|83.98
-80.49|1000|0|7|96.19|75.23|80.49|21000|0|16800|4200|96.19|75.23|80.49
-80.22|1000|0|15|96.35|73.9|80.22|21000|0|16800|4200|96.35|73.9|80.22
-80.2|1000|0|5|96.42|74.57|80.2|21000|0|16800|4200|96.42|74.57|80.2
-80.11|1000|0|10|95.78|73.33|80.11|21000|0|16800|4200|95.78|73.33|80.11
-78.33|1000|15|5|90.7|82.47|78.33|22000|805|17600|4400|90.7|82.47|78.33
+FINAL ACCURACY|Documents to extract|Top percentage of words to use|Number of common Letters to use|Classifier accuracy on test set|Model accuracy against europarl.test|All documents processed|Number of features used|Training set|Test set
+--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|--------------|
+94.75|5000|0|10|96.59|94.75|105000|0|84000|21000
+94.73|5000|0|7|96.87|94.73|105000|0|84000|21000
+94.66|5000|0|5|96.54|94.66|105000|0|84000|21000
+94.6|5000|0|15|96.9|94.6|105000|0|84000|21000
+94.52|10000|5|5|97.03|94.52|187071|129|149656|37415
+93.56|10000|10|10|96.44|93.56|187071|415|149656|37415
+93.51|5000|5|5|96.34|93.51|110000|121|88000|22000
+92.63|5000|5|5|96.8|92.63|105000|129|84000|21000
+92.6|5000|10|5|95.99|92.6|110000|399|88000|22000
+91.91|5000|10|10|96.41|91.91|105000|415|84000|21000
+91.44|10000|15|5|94.93|91.44|187071|856|149656|37415
+91.39|3000|5|5|96.06|91.39|66000|119|52800|13200
+90.15|3000|10|5|94.93|90.15|66000|389|52800|13200
+89.77|5000|15|5|94.25|89.77|110000|827|88000|22000
+89.05|5000|15|5|94.48|89.05|105000|856|84000|21000
+87.5|10000|20|6|92.35|87.5|187071|1491|149656|37415
+85.88|3000|15|5|93.28|85.88|66000|805|52800|13200
+85.87|1000|5|5|94.84|85.87|22000|119|17600|4400
+84.65|3000|20|5|90.65|84.65|66000|1423|52800|13200
+84.41|1000|10|5|93.38|84.41|22000|389|17600|4400
+83.98|5000|20|6|91.18|83.98|105000|1491|84000|21000
+80.49|1000|0|7|96.19|80.49|21000|0|16800|4200
+80.22|1000|0|15|96.35|80.22|21000|0|16800|4200
+80.2|1000|0|5|96.42|80.2|21000|0|16800|4200
+80.11|1000|0|10|95.78|80.11|21000|0|16800|4200
+78.33|1000|15|5|90.7|78.33|22000|805|17600|4400
 
 ### Prerequisites
 
@@ -170,7 +170,7 @@ Generate pickle files by rooning the Create Pickles from Corpora.
 
 ## Deployment
 
-Once the models have been generated, you can run the 'Deploy - Loop through classifiers for testing of Europarl.test file' notebook to test against the europarl.test file.
+Once the models have been generated, you can run the [Deploy - Loop through classifiers for testing of Europarl.test file] (Deploy%20Loop%20through%20classifiers%20for%20testing%20of%20Europarl.test%20file.ipynb) notebook to test against the europarl.test file.
 This is only if you are to generate models by tweaking the different hyperparameters.
 
 ## License
